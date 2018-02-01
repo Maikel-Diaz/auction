@@ -113,4 +113,21 @@ public class Auction
             }
         }
     }
+    
+    public ArrayList<Lot> getUnsould()
+    {
+        ArrayList<Lot> noVendidos = new ArrayList<>();
+        noVendidos = (ArrayList)lots.clone();
+        int contador = 0;
+        for(Lot lot : lots){
+            if(lot.getHighestBid() != null){
+                noVendidos.remove(contador);
+            }
+            else{
+                contador = contador + 1;
+            }
+        }
+        return noVendidos;
+        }
 }
+
