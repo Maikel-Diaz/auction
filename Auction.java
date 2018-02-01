@@ -99,4 +99,18 @@ public class Auction
             return null;
         }
     }
+    
+    public void close()
+    {   
+        for(Lot element : lots){
+            System.out.println(element.toString());
+            if(element.getHighestBid() == null){
+                System.out.println("No hay pujas aún");
+            }
+            else {
+                System.out.println("La persona que ha hecho la puja mas alta es: " + element.getHighestBid().getBidder().getName());
+                System.out.println("Su puja es: " + element.getHighestBid().getValue());
+            }
+        }
+    }
 }
